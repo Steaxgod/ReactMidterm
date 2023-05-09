@@ -1,7 +1,9 @@
+import '../index.css';
+
 function LoadingIndicator() {
 
-    return <div>Loading...</div>;
+    return <div class="loading">Loading...</div>;
 
 }  
     
-    
+export default LoadingIndicator;

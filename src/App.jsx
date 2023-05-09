@@ -5,7 +5,10 @@ import React from 'react';
 import ProductDetail from './components/ProductDetail';
 import Products from './components/Products';
 
+
 function Home() {
+
+  
   return (
     <div class="homepg">
       <h1 class="h1hm">👋Welcome👋</h1>
@@ -24,17 +27,18 @@ function Home() {
 
 
 function App() {
+  
   return (
     <Router>
       <div>
         <nav>
-          <NavLink exact activeClassName="active" to="/">
+          <NavLink id="loading" exact activeClassName="active" to="/">
             Home
           </NavLink>
           <NavLink exact activeClassName="active" to="/">
           💮 
           </NavLink>
-          <NavLink activeClassName="active" to="/products">
+          <NavLink id="loading2" activeClassName="active" to="/products">
             Products
           </NavLink>
         </nav>

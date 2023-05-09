@@ -7,7 +7,7 @@ import React from 'react';
 
 function Products() {
   const { data, loading, error } = useFetch('products');
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div class="loading">Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
   return (

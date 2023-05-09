@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
-import LoadingIndicator from './LoadingIndicator';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useFetch } from '../hooks/useFetch';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const history = useHistory();
-  const { isLoading, data: product, error } = useFetch(`/api/products/${id}`);
+  const navigate = useNavigate();
+  const { isLoading, data: product, error } = useFetch(`products/${id}`);
+
+  const backtoproducts = () => {
+    navigate('/products');
+  };
 
   // Handle error
   if (error) {
@@ -19,8 +22,8 @@ const ProductDetail = () => {
   }
 
   return (
-    <div>
-      <button onClick={() => history.goBack()}>Back</button>
+    <div class="xuynya">
+      <button onClick={backtoproducts}>Back</button>
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} />
       <p>{product.description}</p>
@@ -29,3 +32,6 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+
+

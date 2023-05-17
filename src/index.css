@@ -5,8 +5,20 @@
   --text-color: #fffb00;
   --font-family: "Poppins", sans-serif;
 }
-
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+
   margin: 0;
   padding: 0;
   font-family: var(--font-family);

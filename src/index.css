@@ -259,3 +259,120 @@ p {
   color: var(--text-color);
 }
 
+.iteminf {
+  width: 1000px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  
+}
+
+.inf {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.inf2 {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.backbtn {
+
+  background-color: black;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.backbtn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.iteminf h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.iteminf img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.iteminf p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.iteminf p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+.backbtn {
+  display: inline-block; /* задаем блочно-строчный элемент */
+  padding: 10px 15px; /* добавляем внутренний отступ для кнопки */
+  background-color: #f2f2f2; /* цвет фона кнопки */
+  border: none; /* убираем границу */
+  border-radius: 5px; /* скругляем углы кнопки */
+  font-size: 16px; /* размер шрифта */
+  font-weight: bold; /* жирный шрифт */
+  color: #333; /* цвет текста */
+  text-decoration: none; /* убираем подчеркивание */
+  cursor: pointer; /* меняем курсор при наведении на кнопку */
+  transition: background-color 0.3s ease-in-out; /* добавляем плавный переход при изменении цвета фона */
+}
+
+.backbtn:hover {
+  background-color: #ddd; /* изменяем цвет фона кнопки при наведении на нее курсора */
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+

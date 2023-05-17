@@ -2,8 +2,13 @@ import { Route, NavLink, BrowserRouter as Router, Routes } from 'react-router-do
 import { useFetch } from '../src/hooks/useFetch';
 import './index.css';
 import React from 'react';
+import ProductDetail from './components/ProductDetail';
+import Products from './components/Products';
+
 
 function Home() {
+
+  
   return (
     <div class="homepg">
       <h1 class="h1hm">👋Welcome👋</h1>
@@ -19,72 +24,28 @@ function Home() {
   );
 }
 
-function Products() {
-  const { data, loading, error } = useFetch('products');
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
 
-  return (
-    <div>
-      <h1 class="lsheading">📜Item List📜</h1>      
-      <div class="list">
-        {data.map(product => (
-          <div class="itemnum" key={product.id}>
-            <NavLink to={`/products/${product.id}`}>
-              <img src={product.image} alt={product.title} />
-              <p>{product.title}</p>
-            </NavLink>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-const ProductDetail = () => {
-  const { productId } = useParams();
-  const history = useHistory();
-  const { isLoading, data: product, error } = useFetch(`/api/products/${productId}`);
-
-  // Handle error
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  // Render loading indicator if data is still loading
-  if (isLoading || !product) {
-    return <LoadingIndicator />;
-  }
-
-  return (
-    <div>
-      <button onClick={() => history.goBack()}>Назад</button>
-      <h1>{product.title}</h1>
-      <img src={product.image} alt={product.title} />
-      <p>{product.description}</p>
-    </div>
-  );
-};
 
 function App() {
+  
   return (
     <Router>
       <div>
         <nav>
-          <NavLink exact activeClassName="active" to="/">
+          <NavLink id="loading" exact activeClassName="active" to="/">
             Home
           </NavLink>
           <NavLink exact activeClassName="active" to="/">
           💮 
           </NavLink>
-          <NavLink activeClassName="active" to="/products">
+          <NavLink id="loading2" activeClassName="active" to="/products">
             Products
           </NavLink>
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/products" element={<Products />} />
-          <Route path="/products/:productId" element={<ProductDetail />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
         </Routes>
       </div>
     </Router>

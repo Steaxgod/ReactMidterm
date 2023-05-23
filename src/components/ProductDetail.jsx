@@ -12,7 +12,7 @@ const ProductDetail = () => {
   const { loading, data: product, error } = useFetch(`products/${id}`);
   const { theme, toggleTheme } = useContext(ThemeContext)
 
-  if (loading) return <div class="loading">Loading...</div>;
+  if (loading) return <div className="loading">Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
   const backtoproducts = () => {
@@ -27,16 +27,16 @@ const ProductDetail = () => {
   <div className="iteminf" style={{ backgroundColor: theme.itembk}}>
     {product && (
       <>
-      <div class="inf" >
+      <div className="inf" >
         <img src={product.image} alt={product.title} />
         <h2 style={{color: theme.text}}>{product.title}</h2>
       </div>
-      <div  class="inf2">
+      <div  className="inf2">
         <p style={{color: theme.text}}>Category: {product.category}</p>
         <p style={{color: theme.text}}>Price: ${product.price}</p>
         <p style={{color: theme.text}}>Rating: {product.rating.rate} ({product.rating.count} reviews)</p>
         <p style={{color: theme.text}}>{product.description}</p>
-        < button style={{backgroundColor: theme.background ,color: theme.text}} class="backbtn" onClick={backtoproducts}>Back</button>
+        < button style={{backgroundColor: theme.background ,color: theme.text}} className="backbtn" onClick={backtoproducts}>Back</button>
       </div>
       </>
     )}

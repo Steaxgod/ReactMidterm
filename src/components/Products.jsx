@@ -8,16 +8,20 @@ import { useContext,  } from 'react';
 
 function Products() {
   const { data, loading, error } = useFetch('products');
-  if (loading) return <div class="loading">Loading...</div>;
-  if (error) return <div>{error.message}</div>;
   const { theme, toggleTheme } = useContext(ThemeContext)
+
+
+
+  
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   return (
     <div >
-      <h1 class="lsheading" style={{color: theme.text}}>📜Item List📜</h1>      
-      <div class="list" style={{ backgroundColor: theme.nav}}>
+      <h1 className="lsheading" style={{color: theme.text}}>📜Item List📜</h1>      
+      <div className="list" style={{ backgroundColor: theme.nav}}>
         {data.map(product => (
-          <div class="itemnum" key={product.id}>
+          <div className="itemnum" key={product.id}>
             <NavLink to={`/products/${product.id}`}>
               <img src={product.image} alt={product.title} />
               <p>{product.title}</p>

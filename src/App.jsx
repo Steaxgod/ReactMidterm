@@ -14,9 +14,9 @@ function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext)
 
   return (
-    <div class="homepg" style={{backgroundColor: theme.background, color: theme.foreground }}>
-      <h1 class="h1hm" style={{ color: theme.text}} >👋Welcome👋</h1>
-      <div class="texthm"  style={{ color: theme.foreground}}>
+    <div className="homepg" style={{backgroundColor: theme.background, color: theme.foreground }}>
+      <h1 className="h1hm" style={{ color: theme.text}} >👋Welcome👋</h1>
+      <div className="texthm"  style={{ color: theme.foreground}}>
         <h1 style={{ color: theme.foreground}}>Welcome to our website!</h1>
         <p>We offer a wide selection of products for all your needs.</p>
         <p>Our products are sourced from the highest quality materials and crafted with care to ensure their longevity and durability.</p>
@@ -39,13 +39,11 @@ function App() {
     <Router>
       <div style={{backgroundColor: theme.background, color: theme.foreground }}>
         <nav style={{ backgroundColor: theme.nav}}>
-          <NavLink id="loading" exact activeClassName="active" to="/" style={{ color: theme.text}}>
+          <NavLink id="loading"  to="/" style={{ color: theme.text}}>
             Home
           </NavLink>
-          <NavLink exact activeClassName="active" to="/" style={{ color: theme.text}}>
-          💮 
-          </NavLink>
-          <NavLink id="loading2" activeClassName="active" to="/products" style={{ color: theme.text}}>
+
+          <NavLink id="loading2"  to="/products" style={{ color: theme.text}}>
             Products
           </NavLink>
           <ToggleSwitch onToggle={ toggleTheme } />

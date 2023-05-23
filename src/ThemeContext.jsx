@@ -15,6 +15,13 @@ export const themes = {
     foreground: '#fff',
     background: '#242526',
   },
+  custom: {
+    itembk: '#ffc125',
+    nav: '#baffc9',
+    text: '#5e3205',
+    foreground: '#5e3205',
+    background: '#ffffba',
+  }
 };
 
 
@@ -27,11 +34,12 @@ export const ThemeContext = createContext({
 export const ThemeProvider = (props) => {
     const [theme, setTheme] = useState(themes.dark);
 
-    const toggleTheme = () => {
-      setTheme((previousValue) =>
-        previousValue === themes.light ? themes.dark : themes.light
-      );
+    const toggleTheme = (theme) => {
+      setTheme((theme))
     };
+
+
+
 
     useEffect(() => {
       document.body.style.background = theme.background;

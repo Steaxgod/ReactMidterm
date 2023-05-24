@@ -4,19 +4,19 @@ export const themes = {
   light: {
     nav: '#009dd6',
     text: '#112233',
-    itembk: '#92dfff',
+    itembk: '#009dd6',
     foreground: '#242526',
     background: '#fff',
   },
   dark: {
-    itembk: '#1034a6',
+    itembk: '#2E2D88',
     nav: '#2E2D88',
     text: '#ffc125',
     foreground: '#fff',
     background: '#242526',
   },
   custom: {
-    itembk: '#ffc125',
+    itembk: '#baffc9',
     nav: '#baffc9',
     text: '#5e3205',
     foreground: '#5e3205',
@@ -32,7 +32,7 @@ export const ThemeContext = createContext({
 });
 
 export const ThemeProvider = (props) => {
-    const [theme, setTheme] = useState(themes.dark);
+    const [theme, setTheme] = useState(themes.custom);
 
     const toggleTheme = (theme) => {
       setTheme((theme))

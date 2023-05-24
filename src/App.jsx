@@ -7,6 +7,7 @@ import Products from './components/Products';
 import ToggleSwitch from './components/ToggleSwitch';
 import { ThemeContext,  } from './ThemeContext';
 import { useContext,  } from 'react';
+import Cart from './components/ShopingCart/Cart';
 
 
 function Home() {
@@ -39,19 +40,24 @@ function App() {
     <Router>
       <div style={{backgroundColor: theme.background, color: theme.foreground }}>
         <nav style={{ backgroundColor: theme.nav}}>
-          <NavLink id="loading"  to="/" style={{ color: theme.text}}>
-            Home
-          </NavLink>
-
-          <NavLink id="loading2"  to="/products" style={{ color: theme.text}}>
-            Products
-          </NavLink>
-          <ToggleSwitch onToggle={ toggleTheme } />
+        <div className='navHolder'>
+            <NavLink className="switch" id="loading"  to="/" style={{ color: theme.text}}>
+            🏠
+            </NavLink>
+            <NavLink className='switch' to="/cart">
+            🛍️
+            </NavLink>
+            <NavLink  className="switch" id="loading2"  to="/products" style={{ color: theme.text}}>
+            📦
+            </NavLink>
+            <ToggleSwitch onToggle={ toggleTheme } className="themeChange" />
+          </div>
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </Router>

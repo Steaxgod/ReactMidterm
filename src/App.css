@@ -1,7 +1,6 @@
 nav {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 16px;
   background-color: #009dd6;
   color: #fff;
@@ -17,3 +16,10 @@ nav a {
 nav a:hover {
   color: #ffc125;
 }
+.navHolder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+

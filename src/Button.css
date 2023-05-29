@@ -1,0 +1,38 @@
+.holder {
+    display: flex;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .switch:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .theme-icon {
+    font-size: 30px;
+    color: #000000;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .black-theme-icon {
+    color: #000000;
+  }
+  
+  .white-theme-icon {
+    color: #fcc101;
+  }
+  
+  .custom-theme-icon {
+    color: #ff0000;
+  }
+  

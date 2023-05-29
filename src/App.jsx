@@ -4,16 +4,21 @@ import './index.css';
 import React from 'react';
 import ProductDetail from './components/ProductDetail';
 import Products from './components/Products';
+import ToggleSwitch from './components/ToggleSwitch';
+import { ThemeContext,  } from './ThemeContext';
+import { useContext,  } from 'react';
+import Cart from './components/ShopingCart/Cart';
 
 
 function Home() {
 
-  
+  const { theme, toggleTheme } = useContext(ThemeContext)
+
   return (
-    <div class="homepg">
-      <h1 class="h1hm">👋Welcome👋</h1>
-      <div class="texthm">
-        <h1>Welcome to our website!</h1>
+    <div className="homepg" style={{backgroundColor: theme.background, color: theme.foreground }}>
+      <h1 className="h1hm" style={{ color: theme.text}} >👋Welcome👋</h1>
+      <div className="texthm"  style={{ color: theme.foreground}}>
+        <h1 style={{ color: theme.foreground}}>Welcome to our website!</h1>
         <p>We offer a wide selection of products for all your needs.</p>
         <p>Our products are sourced from the highest quality materials and crafted with care to ensure their longevity and durability.</p>
         <p>Whether you're looking for something practical, like a set of kitchen utensils, or something more indulgent, like a luxury candle, we have something for everyone.</p>
@@ -28,24 +33,31 @@ function Home() {
 
 function App() {
   
+  const { theme, toggleTheme } = useContext(ThemeContext)
+
+
   return (
     <Router>
-      <div>
-        <nav>
-          <NavLink id="loading" exact activeClassName="active" to="/">
-            Home
-          </NavLink>
-          <NavLink exact activeClassName="active" to="/">
-          💮 
-          </NavLink>
-          <NavLink id="loading2" activeClassName="active" to="/products">
-            Products
-          </NavLink>
+      <div style={{backgroundColor: theme.background, color: theme.foreground }}>
+        <nav style={{ backgroundColor: theme.nav}}>
+        <div className='navHolder'>
+            <NavLink className="switch" id="loading"  to="/" style={{ color: theme.text}}>
+            🏠
+            </NavLink>
+            <NavLink className='switch' to="/cart">
+            🛍️
+            </NavLink>
+            <NavLink  className="switch" id="loading2"  to="/products" style={{ color: theme.text}}>
+            📦
+            </NavLink>
+            <ToggleSwitch onToggle={ toggleTheme } className="themeChange" />
+          </div>
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </Router>

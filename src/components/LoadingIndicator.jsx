@@ -2,7 +2,7 @@ import '../index.css';
 
 function LoadingIndicator() {
 
-    return <div class="loading">Loading...</div>;
+    return <div className="loading">Loading...</div>;
 
 }  
     

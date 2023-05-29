@@ -5,8 +5,20 @@
   --text-color: #fffb00;
   --font-family: "Poppins", sans-serif;
 }
-
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
@@ -240,7 +252,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 100%;
   color: var(--text-color);
   background-color: var(--background-color);
 }
@@ -263,6 +275,7 @@ p {
   width: 1000px;
   height: 600px;
   margin: 0 auto;
+  margin-top: 50px;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -271,8 +284,8 @@ p {
   gap: 10px;
   padding: 30px;
   background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 3px solid #ccc;
+  border-radius: 20px;
   font-size: 16px;
   font-weight: bold;
   color: #333;
@@ -334,11 +347,6 @@ p {
 .iteminf p:last-child {
   margin-bottom: 0;
 }
-
-
-
-
-
 
 
 
